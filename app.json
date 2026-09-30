@@ -8,7 +8,12 @@
     "scheme": "sample",
     "userInterfaceStyle": "automatic",
     "ios": {
-      "icon": "./assets/expo.icon"
+      "icon": "./assets/expo.icon",
+      "bundleIdentifier": "com.anonymous.sample",
+      "supportsTablet": true,
+      "entitlements": {
+        "com.apple.security.application-groups": ["group.com.oziyedu.sampleapp"]
+      }
     },
     "android": {
       "adaptiveIcon": {
@@ -18,7 +23,7 @@
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
       },
       "predictiveBackGestureEnabled": false,
-      "package": "com.anonymous.sample"
+      "package": "com.oziyedu.sampleapp"
     },
     "web": {
       "output": "static",
@@ -26,6 +31,13 @@
       "bundler": "metro"
     },
     "plugins": [
+      [
+        "react-native-widget-extension",
+        {
+          "frequentUpdates": true,
+          "widgetsFolder": "SampleWidget"
+        }
+      ],
       "expo-router",
       [
         "expo-splash-screen",
@@ -34,7 +46,8 @@
           "image": "./assets/images/splash-icon.png",
           "imageWidth": 76
         }
-      ]
+      ],
+      "expo-audio"
     ],
     "experiments": {
       "typedRoutes": true,

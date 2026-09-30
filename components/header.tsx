@@ -1,3 +1,4 @@
+import { router } from "expo-router";
 import { BellDot } from "lucide-react-native";
 import { Image, Pressable, Text, View } from "react-native";
 import Toast from "react-native-toast-message";
@@ -12,6 +13,8 @@ export default function HeaderComponent() {
       visibilityTime: 2500,
       topOffset: 60,
     });
+
+    router.push("/notify");
   };
 
   return (
